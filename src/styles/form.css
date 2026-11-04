@@ -215,6 +215,10 @@
   .alt-actions {
     flex-direction: row;
   }
+
+  .alt-actions .btn {
+    flex: 1;
+  }
 }
 
 
