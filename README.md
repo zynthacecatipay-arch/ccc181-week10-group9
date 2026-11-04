@@ -67,4 +67,4 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 
 ## What our group learned (leader writes this last)
 
-> (write your answer here)
+> We learned that mobile-first means writing the phone styles first and then only adding layout with min-width media queries at 768px, 1024px and 1280px. We also learned how Grid (page layout, footer) and Flexbox (navbar, form) work together, why the viewport meta tag is needed, and how to work as a team on GitHub with branches, pull requests and reviews, including fixing merge conflicts in the README.
