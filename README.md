@@ -33,7 +33,7 @@ npm run build        # must finish with no errors before you submit
 | --- | --- | --- | --- | --- |
 | 1 (leader) | Zynth Ace Catipay | zynthacecatipay-arch| `base.css` | Set up the repo, wrote the base layout and brand panel CSS, and added the viewport meta tag |
 | 2 (member) | Khrystine D. Coronel | KhrystineCoronel | `nav.css` | Styled the responsive navigation bar and footer. |
-| 3 | | | `form.css` | |
+| 3 (member)| Mark Rainier D. Lumahang|kalezeraii | `form.css` | Wrote form.css: stacked 48px fields on phone, checkbox row and buttons side by side from 768px, card padding at 1024px.|
 
 ## Experiment 0: the page without the viewport tag
 
