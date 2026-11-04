@@ -23,24 +23,27 @@ npm run build        # must finish with no errors before you submit
 
 | Item | Your answer |
 | --- | --- |
-| Group number | |
-| Section | |
-| Repository URL | |
+| Group number |9|
+| Section |BSIT-3B|
+| Repository URL |  |
 
 ## Members (each member fills in their own row in their own commit)
 
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
-| 1 (leader) | | | `base.css` | |
+| 1 (leader) | Zynth Ace Catipay | zynthacecatipay-arch
+ | `base.css` | Set up the repo, wrote the base layout and brand panel CSS, and added the viewport meta tag |
 | 2 | | | `nav.css` | |
 | 3 | | | `form.css` | |
 
 ## Experiment 0: the page without the viewport tag
 
-What did the page look like in DevTools phone mode **before** adding the viewport meta tag?
+What did the page look like in DevTools phone mode **before** adding the viewport meta tag? 
 What changed **after** adding it?
 
-> (write your answer here)
+> Before the viewport tag, the page looked zoomed out and tiny in phone mode; after adding it and hard reloading, the page used the real phone width and the text became readable in one column.
+
+> After adding the viewport tag and hard reloading, the page used the real phone width, so the text was readable and the layout showed as one column instead of looking zoomed out.
 
 ## DevTools test results
 
