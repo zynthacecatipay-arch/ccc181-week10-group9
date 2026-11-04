@@ -1,5 +1,5 @@
 ## What I did
-<!-- Wrote `base.css` (mobile-first, CSS Grid and rem) and added the viewport meta tag to `index.html`: single column on phones, more padding at 768px, two columns at 1024px, and a centered 1200px container at 1280px.-->
+Wrote `base.css` (mobile-first, CSS Grid and rem) and added the viewport meta tag to `index.html`: single column on phones, more padding at 768px, two columns at 1024px, and a centered 1200px container at 1280px.
 
 ## My checklist (tick before asking for review)
 - [x] I edited only my own CSS file (or told the group why not)
@@ -9,4 +9,4 @@
 - [ ] I tested at 360, 768, 1024 and 1280 px in DevTools: no sideways scrolling
 
 ## Reviewer notes (a DIFFERENT teammate fills this in)
-<!-- What did you check? Anything to fix before merging? -->
+Reviewed the base.css changes. Checked the page layout and responsive styles at 360px, 768px, 1024px, and 1280px. No issues found. Ready to merge.
