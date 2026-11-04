@@ -31,9 +31,8 @@ npm run build        # must finish with no errors before you submit
 
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
-| 1 (leader) | Zynth Ace Catipay | zynthacecatipay-arch
- | `base.css` | Set up the repo, wrote the base layout and brand panel CSS, and added the viewport meta tag |
-| 2 | | | `nav.css` | |
+| 1 (leader) | Zynth Ace Catipay | zynthacecatipay-arch| `base.css` | Set up the repo, wrote the base layout and brand panel CSS, and added the viewport meta tag |
+| 2 (member) | Khrystine D. Coronel | KhrystineCoronel | `nav.css` | Styled the responsive navigation bar and footer. |
 | 3 | | | `form.css` | |
 
 ## Experiment 0: the page without the viewport tag
@@ -49,17 +48,21 @@ What changed **after** adding it?
 
 | Width | What must be true | Pass? |
 | --- | --- | --- |
-| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | |
-| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | |
-| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | |
-| 1280 px | Content centered and stops at 1200px. | |
+| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | yes|
+| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | yes|
+| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | yes|
+| 1280 px | Content centered and stops at 1200px. | yes |
 
 ### Breakpoints I observed
 
 Using **Show media queries** and dragging slowly from 360 px to 1280 px, the layout changed at these exact widths:
 
-> (write the widths here, and say whether any width looked broken)
-
+> The layout changed at these widths:
+- 360px: Mobile layout; navigation and content are stacked.
+- 768px: Navigation becomes horizontal; form options and buttons are arranged in rows.
+- 1024px: Brand panel and login card appear side by side; footer changes to 3 columns.
+- 1280px: Main content becomes centered with a maximum width of 1200px.
+Broken width: At 360px, the brand panel and login form appeared unstyled and misaligned in my screenshot.
 Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png`.
 
 ## What our group learned (leader writes this last)
