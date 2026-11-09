@@ -1,0 +1,68 @@
+{
+  "info": {
+    "_postman_id": "58ba36c7-3bb0-4ff5-8b55-dc420c092395",
+    "name": "CampusConnect API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60062811",
+    "_collection_link": "https://go.postman.co/collection/60062811-58ba36c7-3bb0-4ff5-8b55-dc420c092395?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sessions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Profile Without Token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ideal-space-spork-xr4r7j7v9gvrhr6-3000.app.github.dev/api/v1/users/me",
+          "protocol": "https",
+          "host": [
+            "ideal-space-spork-xr4r7j7v9gvrhr6-3000",
+            "app",
+            "github",
+            "dev"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Profile With Token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
