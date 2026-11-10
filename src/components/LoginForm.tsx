@@ -1,8 +1,12 @@
-// GIVEN FILE (styled in form.css by Member 3). Do not edit.
-// The sign-in is a DEMO: nothing is sent to a server and nothing is saved.
+// Login form (styled in form.css by Member 3).
+// Week 12-13: now sends the email and password to the server through
+// src/api/auth.ts and shows Loading, Success and Error states.
 import { useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import type { LoginErrors, LoginFormValues } from '../types';
+import { login, saveToken, messageFor } from '../api/auth';
+
+/* ---------- Constants and helpers ---------- */
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -23,11 +27,21 @@ function validate(values: LoginFormValues): LoginErrors {
   return errors;
 }
 
-export default function LoginForm() {
+/* ---------- Component ---------- */
+
+type LoginFormProps = {
+  onLoginSuccess: (token: string) => void;
+};
+
+export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
+  // form data and front-end validation errors
   const [values, setValues] = useState<LoginFormValues>(INITIAL_VALUES);
   const [errors, setErrors] = useState<LoginErrors>({});
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [signedInAs, setSignedInAs] = useState<string | null>(null);
+
+  // server request states
+  const [loading, setLoading] = useState<boolean>(false); // Loading
+  const [serverError, setServerError] = useState<string>(''); // Error
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, type, value, checked } = event.target;
@@ -37,11 +51,27 @@ export default function LoginForm() {
     }));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    // 1. front-end validation (quick feedback)
     const nextErrors = validate(values);
     setErrors(nextErrors);
-    setSignedInAs(Object.keys(nextErrors).length === 0 ? values.email : null);
+    if (Object.keys(nextErrors).length > 0) return;
+
+    // 2. ask the server
+    setLoading(true);
+    setServerError('');
+    try {
+      const { token } = await login(values.email, values.password);
+      saveToken(token);
+      onLoginSuccess(token); // Success: App shows the Welcome screen
+    } catch (err) {
+      console.error(err); // for developers
+      setServerError(messageFor(err)); // friendly message for users
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -52,6 +82,7 @@ export default function LoginForm() {
       <p className="login-card__subtitle">Use your school email to continue.</p>
 
       <form className="login-form" onSubmit={handleSubmit} noValidate>
+        {/* Email */}
         <div className="form-field">
           <label htmlFor="email">School email</label>
           <input
@@ -73,6 +104,7 @@ export default function LoginForm() {
           )}
         </div>
 
+        {/* Password and Show/Hide button */}
         <div className="form-field">
           <label htmlFor="password">Password</label>
           <div className="password-row">
@@ -103,6 +135,7 @@ export default function LoginForm() {
           )}
         </div>
 
+        {/* Checkbox and Forgot password */}
         <div className="form-options">
           <label className="checkbox">
             <input
@@ -118,16 +151,22 @@ export default function LoginForm() {
           </a>
         </div>
 
-        <button type="submit" className="btn btn--primary">
-          Sign in
-        </button>
-
-        {signedInAs && (
-          <p className="form-success" role="status">
-            Demo only: {signedInAs} would be signed in here. Nothing was sent
-            or saved.
+        {/* Server error (wrong password, server down, and so on) */}
+        {serverError && (
+          <p className="auth-error" role="alert">
+            {serverError}
           </p>
         )}
+
+        {/* Submit button with Loading state */}
+        <button
+          type="submit"
+          className="btn btn--primary"
+          disabled={loading}
+          aria-busy={loading}
+        >
+          {loading ? 'Signing in...' : 'Sign in'}
+        </button>
       </form>
 
       <div className="login-card__divider">
