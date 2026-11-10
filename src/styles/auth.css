@@ -1,0 +1,64 @@
+/* auth.css - Member 3: loading, error and welcome states */
+
+/* ---- PHONE ---- */
+.auth-status {
+  margin: 1rem 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.auth-error {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  color: var(--error);
+  background: #fdecec;
+  border-radius: var(--radius);
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.welcome__title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--navy);
+}
+
+.welcome__logout {
+  width: 100%;
+  min-height: 3rem;
+}
+
+.welcome__logout:hover,
+.welcome__logout:focus-visible {
+  background: #e8e8f7;
+}
+
+/* ---- 768px and up ---- */
+@media (min-width: 768px) {
+  .welcome {
+    max-width: 32rem;
+    margin-inline: auto;
+    padding: 2rem;
+  }
+
+  .welcome__logout {
+    width: auto;
+    align-self: flex-start;
+  }
+}
+
+/* ---- 1024px and up ---- */
+@media (min-width: 1024px) {
+  .welcome__title {
+    font-size: 1.75rem;
+  }
+}
